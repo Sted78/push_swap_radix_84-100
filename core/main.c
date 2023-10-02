@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 09:02:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/02 09:03:42 by svanmarc         ###   ########.fr       */
+/*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
+/*   Updated: 2023/10/02 11:48:01 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	main()
 {
-	
-	
+	ft_printf("noob\n");
 	return (0);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 08:56:19 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/02 08:59:27 by svanmarc         ###   ########.fr       */
+/*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
+/*   Updated: 2023/10/02 11:39:55 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-
-
 
 #endif

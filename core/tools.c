@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands.c                                         :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 11:58:30 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/03 09:31:48 by svanmarc         ###   ########.fr       */
+/*   Created: 2023/10/03 11:13:03 by svanmarc          #+#    #+#             */
+/*   Updated: 2023/10/03 12:12:03 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*sa (swap a) swap les 2 1er de a
-sb (swap b) swap les 2 1er de b
-ss sa et sb en meme temps
-pa (push a) prend le 1er de b et le met sur a
-pb (push b) prend le 1er de a et le met sur b
-ra (rotate a) le 1er de a devient le dernier
-rb (rotate b) le 1er de b devient le dernier
-rr ra et rb en meme temps
-rra (reverse rotate a) le dernier de a devient le 1er
-rrb (reverse rotate b) le dernier de b devient le 1er
-rrr rra et rrb en meme temps*/
+long long int	ft_atoll(const char *str)
+{
+	long long int	result;
+	int	sign;
+	long long int	i;
 
-
-
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	result = result * sign;
+	return (result);
+}

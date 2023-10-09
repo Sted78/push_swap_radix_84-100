@@ -6,18 +6,37 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:02:52 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/03 18:30:06 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:23:52 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+/*
 
-int	no_double(int ac, char **av)
+clear 
+
+./push_swap "1 2 3 "
+./push_swap "1 2 3"
+./push_swap 1 2 3			
+./push_swap ""
+./push_swap "1 ff"
+./push_swap 1 ff
+./push_swap "-8 12 -15"
+./push_swap -8 12 -15
+
+valgrind ./push_swap "1 5 3 "
+valgrind ./push_swap "1 5 3"
+valgrind ./push_swap ""
+valgrind ./push_swap "1 ff"
+*/
+
+
+int	no_double(int ac, char **av, int startindex)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = startindex;
 	while (i < ac)
 	{
 		j = i + 1;
@@ -35,58 +54,74 @@ int	no_double(int ac, char **av)
 	return (1);
 }
 
-int	not_too_big(int ac, char **av)
+int	str_entre_dans_un_int(char *str)
+{
+	long long int	num = ft_atoll(str);
+	if (num < INT_MIN || num > INT_MAX)
+	{
+		ft_putstr("DEBUG : Error : max_int or min_int\n");
+		return (0);
+	}
+	return (1);	
+}
+
+int	not_too_big(int ac, char **av, int startindex)
 {
 	int	i;
-	long long int	num;
-
-	i = 1;
-	num = ft_atoll(av[i]);
+	
+	i = startindex;
 	while (i < ac)
 	{
-		if (num < INT_MIN || num > INT_MAX)
-		{
-			ft_putstr("Error : max_int or min_int\n");
-			return (0);
-		}
+		str_entre_dans_un_int(av[i]);
 		i++;
 	}
 	return (1);
 }
 
-int	nbr_only(int ac, char **av)
+int	nbr_only(int ac, char **av, int startindex)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < ac)
+	i = startindex;
+	while (i < ac)	
 	{
 		j = 0;
 		if (av[i][j] == '-')
 			j++;
 		while (av[i][j])
 		{
-			if (ft_isdigit(av[i][j]) == 0)
+			if ((av[i][j] >= '0' && av[i][j] <= '9')
+					|| av[i][j] == ' ')
+			j++;
+			else 
 			{
-				ft_putstr("Error : nbr_only\n");
+				printf("DEBUG - nbr_only : %s is not a number\n", av[i]);
 				return (0);
 			}
-			j++;
 		}
 		i++;
 	}
 	return (1);
 }
 
-int	no_error_in_args(int ac, char **av)
+int	no_error_in_args(int ac, char **av, int startindex)
 {
-	if (nbr_only(ac, av) == 0)
+	if (nbr_only(ac, av,startindex) == 0)
+	{
+		printf("DEBUG - nbr_only\n");
 		return (0);
-	else if (not_too_big(ac, av) == 0)
+	}	
+	else if (not_too_big(ac, av, startindex) == 0)
+	{
+		printf("DEBUG - not_too_big\n");
 		return (0);
-	else if (no_double(ac, av) == 0)
+	}	
+	else if (no_double(ac, av, startindex) == 0)
+	{
+		printf("DEBUG - no_double\n");
 		return (0);
+	}	
 	else
 		return (1);
 }

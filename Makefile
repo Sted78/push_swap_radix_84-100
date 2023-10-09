@@ -6,7 +6,7 @@
 #    By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 11:04:09 by svanmarc          #+#    #+#              #
-#    Updated: 2023/10/02 11:47:30 by svanmarc         ###   ########.fr        #
+#    Updated: 2023/10/09 12:36:07 by svanmarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,11 @@ fclean: clean
 	@rm -rf $(NAME)
 	@make -s -C $(LIBFT_PATH) fclean
 	@echo "🗑️  Fclean ok"
+
+
+
+
+	
 
 re: fclean all
 	

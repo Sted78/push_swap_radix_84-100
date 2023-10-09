@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:58:30 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/03 09:31:48 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:54:37 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,40 @@ rra (reverse rotate a) le dernier de a devient le 1er
 rrb (reverse rotate b) le dernier de b devient le 1er
 rrr rra et rrb en meme temps*/
 
+t_stack *	rotate(t_stack *pile)
+{
+	t_stack	*tmp;
+	t_stack	*last;
+	
+	if (!pile)
+		return NULL;
 
 
+	if (stack_size(pile) == 1)
+	{
+		printf("attention 1 seul element dans la pile, ne devrait pas se produire");
+		return NULL;
+	}
+		
+	tmp = pile;
+	last = stack_last(pile);
+	last->next = tmp;	
+	pile = pile->next;
+	tmp->next = NULL;	
+	return pile;
+}
+
+t_stack	*	reverse_rotate(t_stack *pile)
+{
+	//t_stack	*tmp;
+	t_stack	*last;
+	
+	if (!pile)
+		return (NULL);
+	//tmp = stack_last(pile);//le dernier
+	
+	stack_add_front(&pile, stack_last(pile));
+	last = stack_last(pile);
+	last->next = NULL;
+	return (pile);	
+}

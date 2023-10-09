@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/03 18:34:37 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:42:53 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,36 @@ typedef struct s_stack
 
 
 //check args
-int		no_error_in_args(int ac, char **av);
-int		nbr_only(int ac, char **av);
-int		not_too_big(int ac, char **av);
+int		no_error_in_args(int ac, char **av, int startindex);
+int		nbr_only(int ac, char **av, int startindex);
+int		not_too_big(int ac, char **av, int startindex);
 //int		not_sorted(int ac, char **av);
-int		no_double(int ac, char **av);
+int		no_double(int ac, char **av, int startindex);
 
 //tool
 long long int	ft_atoll(const char *str);
+int	count_nbrs(char *str, char sep);
+//strs & co
+int ft_tab_strs_size(char **str);
+void ft_free_tab_strs(char **str);
+void ft_print_strs(char **str);
+//commands
+t_stack 	*rotate(t_stack *pile);
+t_stack		*reverse_rotate(t_stack *pile);
 
-//liste chainees
+
+
+//enchained
+//1
 t_stack	*stack_new(int val);
 t_stack	*stack_last(t_stack *stack);
 int stack_size(t_stack *stack);
 void	stack_add_front(t_stack **stack, t_stack *new);
 void	stack_add_back(t_stack **stack, t_stack *new);
-t_stack	*create_stack_a(int ac, char **av);
+//2
+t_stack	*create_stack_a(int ac, char **av, int startindex);
 void	stack_print(t_stack *stack);
 int	stack_is_sorted(t_stack *stack);
-
 
 
 #endif

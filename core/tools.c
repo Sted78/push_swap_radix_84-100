@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:13:03 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/03 12:12:03 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/09 09:46:41 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,26 @@ long long int	ft_atoll(const char *str)
 	}
 	result = result * sign;
 	return (result);
+}
+
+int	count_nbrs(char *str, char sep)
+{
+	int	count;
+	int	i;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (str[i] == sep)
+			i++;
+		if (str[i])
+		{
+			count++;
+			while (str[i] && str[i] != sep)
+				i++;
+		}
+			
+	}
+	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/10 11:38:38 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 19:41:06 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*create_stack_a(int ac, char **av, int startindex);
 void	stack_print(t_stack *stack);
 int	stack_is_sorted(t_stack *stack);
-t_stack	*stack_elem_previous(t_stack *pile, t_stack *last);
+t_stack	*stack_elem_previous(t_stack *pile, t_stack *elem);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/10 11:38:21 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 20:00:39 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int	main(int ac, char **av)
 
 	//pilea = rotate(pilea);
 	
-	//pilea = reverse_rotate(pilea);
-	pilea = test_previous_fct(pilea);
+	pilea = reverse_rotate(pilea);
+	//pilea = test_previous_fct(pilea);
 	stack_print(pilea);
 	printf("test2\n");
 

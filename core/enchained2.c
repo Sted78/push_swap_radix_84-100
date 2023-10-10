@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:32:22 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/10 11:58:14 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 19:59:53 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,38 @@ t_stack	*create_stack_a(int ac, char **av, int startindex)
 	return (stack);
 }
 
-t_stack	*stack_elem_previous(t_stack *pile, t_stack *last)
+/*t_stack	*stack_elem_previous(t_stack *pile, t_stack *elem)
 {
 	t_stack	*before_last;
-	
+	t_stack	*last;
+		
+	last = elem;
 	if (!pile || !last)
 		return (NULL);
-	printf("m\n");
+
+	while (pile->next->next)
+	{
+		pile = pile->next;
+		
+	}	
+	before_last = pile;
+	return (before_last);		
+}*/
+
+t_stack	*stack_elem_previous(t_stack *pile, t_stack *elem)
+{
+	t_stack	*before_last;
+	t_stack	*last;
+	
+	last = elem;
+	if (!pile || !last)
+		return (NULL);
 	while (pile->next)
 	{
-		if (pile->next == last)
-			before_last = pile;
-		else
-			pile = pile->next;
+		before_last = pile;
+		if (pile == last)
+			break;
+		pile = pile->next;
 	}
-	printf("n\n");
-		
-	return (before_last);		
+	return (before_last);
 }
-

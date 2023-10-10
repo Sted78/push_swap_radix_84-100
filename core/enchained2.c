@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:32:22 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/09 16:58:45 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:58:14 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	stack_print(t_stack *stack)
 	{
 		printf("%i, ", stack->val);
 		stack = stack->next;
-		printf("ok");
 	}
 	printf("\n");
 }
@@ -46,15 +45,6 @@ t_stack	*create_stack_a(int ac, char **av, int startindex)
 					
 	i = startindex;
 	stack = NULL;
-	
-	/*if (ac == 2)
-	{
-		printf("qqqqqqqqqqqqq\n");
-		new_ac = count_nbrs(av[1], ' ');
-		new_av = ft_split(av[1], ' ');
-		
-		i = 0;
-	}*/
 	while (i < ac)
 	{
 		stack_add_back(&stack, stack_new(ft_atoi(av[i])));
@@ -62,3 +52,23 @@ t_stack	*create_stack_a(int ac, char **av, int startindex)
 	}
 	return (stack);
 }
+
+t_stack	*stack_elem_previous(t_stack *pile, t_stack *last)
+{
+	t_stack	*before_last;
+	
+	if (!pile || !last)
+		return (NULL);
+	printf("m\n");
+	while (pile->next)
+	{
+		if (pile->next == last)
+			before_last = pile;
+		else
+			pile = pile->next;
+	}
+	printf("n\n");
+		
+	return (before_last);		
+}
+

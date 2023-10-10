@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:58:30 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/09 16:54:37 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:46:56 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,42 @@ t_stack *	rotate(t_stack *pile)
 
 t_stack	*	reverse_rotate(t_stack *pile)
 {
-	//t_stack	*tmp;
 	t_stack	*last;
+	t_stack	*new_last;
+	//t_stack	*before_last;
 	
-	if (!pile)
+	printf("a\n");
+	if (!pile || !pile->next)
 		return (NULL);
-	//tmp = stack_last(pile);//le dernier
-	
-	stack_add_front(&pile, stack_last(pile));
+	// on cintinue seulement ya qu moins 2 elem
+	printf("b\n");
 	last = stack_last(pile);
-	last->next = NULL;
+	// before_last = stack_elem_previous(pile, last)
+	// before_last->next = null
+	printf("c\n");
+	last->next = pile;
+	pile = last;
+	//
+	new_last = stack_last(pile);
+	printf("d\n");
+	
+	new_last->next = NULL;
 	return (pile);	
+}
+
+t_stack		*test_previous_fct(t_stack *pile)
+{
+	t_stack	*last;
+	t_stack	*before_last;
+
+	printf("1\n");
+
+	last = stack_last(pile);
+	
+	printf("2\n");
+	before_last = stack_elem_previous(pile, last);
+	
+	printf("3\n");
+	return (before_last);
+	
 }

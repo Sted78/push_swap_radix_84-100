@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/09 16:42:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:38:38 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void ft_print_strs(char **str);
 //commands
 t_stack 	*rotate(t_stack *pile);
 t_stack		*reverse_rotate(t_stack *pile);
+t_stack		*test_previous_fct(t_stack *pile);
 
 
 
@@ -55,6 +56,7 @@ void	stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*create_stack_a(int ac, char **av, int startindex);
 void	stack_print(t_stack *stack);
 int	stack_is_sorted(t_stack *stack);
+t_stack	*stack_elem_previous(t_stack *pile, t_stack *last);
 
 
 #endif

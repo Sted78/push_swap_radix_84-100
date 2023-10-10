@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/09 16:59:46 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:38:21 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,20 @@ int	main(int ac, char **av)
 	
 	t_stack	*pilea = create_stack_a(new_ac, new_av, startindex);
 	stack_print(pilea);
+	printf("test1\n");
+
+	//pilea = rotate(pilea);
 	
+	//pilea = reverse_rotate(pilea);
+	pilea = test_previous_fct(pilea);
+	stack_print(pilea);
+	printf("test2\n");
+
+
+
+	
+	return (0);
+}
 	/*
 	if (stack_is_sorted(pilea))
 	{
@@ -65,10 +78,10 @@ int	main(int ac, char **av)
 	ra()*/
 	
 	//stack_print(pilea);
-	printf("ok111");
+	/*printf("ok111");
 	pilea = reverse_rotate(pilea);
 	printf("ok");	
-	stack_print(pilea);
+	stack_print(pilea);*/
 	/*pilea = rotate(pilea);	
 	stack_print(pilea);
 	pilea = rotate(pilea);	
@@ -81,5 +94,4 @@ int	main(int ac, char **av)
 	
 	//trier pile
 
-	return (0);
-}
+	

@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/10 20:00:39 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:26:30 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ int	main(int ac, char **av)
 	int	new_ac;
 	char	**new_av;
 	int	startindex;
+	t_stack	*pilea;
+	t_stack *pileb;
 
-	if (ac == 1)
+	pileb = NULL;		
+	if (ac == 1)//coupler avec sorted
 	{
 		write (1, "\n", 1);
 		return (0);
@@ -35,9 +38,7 @@ int	main(int ac, char **av)
 	}
 	else
 		startindex = 1;
-	printf("--------------ft_print_strs(new_av) :----------------\n");
 	ft_print_strs(new_av);
-	printf("\n----------------------------\n");
 	if (!no_error_in_args(new_ac, new_av, startindex))
 	{
 		printf("EXIT_FAILURE\n");
@@ -48,16 +49,22 @@ int	main(int ac, char **av)
 	ft_putstr("jusqu'ici tout va bien\n");
 
 	
-	t_stack	*pilea = create_stack_a(new_ac, new_av, startindex);
+	pilea = create_stack_a(new_ac, new_av, startindex);
+	
+	//t_stack	*pilea = create_stack_a(new_ac, new_av, startindex);
 	stack_print(pilea);
 	printf("test1\n");
 
 	//pilea = rotate(pilea);
 	
-	pilea = reverse_rotate(pilea);
+	//pilea = reverse_rotate(pilea);
 	//pilea = test_previous_fct(pilea);
+	//pilea = swap(pilea);
+	pilea = push(&pilea, pileb);
 	stack_print(pilea);
-	printf("test2\n");
+	printf("testa\n");
+	stack_print(pileb);
+	printf("testb\n");
 
 
 

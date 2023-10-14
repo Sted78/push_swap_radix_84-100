@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:39:38 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 12:39:44 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 19:31:59 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,7 @@ void	rrr(t_stack **pilea, t_stack **pileb)
 	*pileb = reverse_rotate(*pileb);
 	write(1, "rrr\n", 4);
 }
+
+//rra, rrb, rrr = reverse rotate a, b, both
+//shift down all elements of stack a by 1. 
+//	The last element becomes the first one.

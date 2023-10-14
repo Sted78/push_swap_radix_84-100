@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:16:51 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 12:30:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 19:39:47 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,5 @@ void	rr(t_stack **pilea, t_stack **pileb)
 	*pileb = rotate(*pileb);
 	write(1, "rr\n", 3);
 }
+//ra, rb, rr = rotate a, b, both
+//shift up all elements of stack a by 1.

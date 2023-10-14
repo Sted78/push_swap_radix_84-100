@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 14:26:30 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 19:39:29 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	t_stack *pileb;
 
 	pileb = NULL;		
-	if (ac == 1)//coupler avec sorted
+	if (ac == 1)
 	{
 		write (1, "\n", 1);
 		return (0);
@@ -44,30 +44,9 @@ int	main(int ac, char **av)
 		printf("EXIT_FAILURE\n");
 		return (EXIT_FAILURE);
 	}
-
-	
-	ft_putstr("jusqu'ici tout va bien\n");
-
-	
 	pilea = create_stack_a(new_ac, new_av, startindex);
+	sort_piles(&pilea, &pileb);
 	
-	//t_stack	*pilea = create_stack_a(new_ac, new_av, startindex);
-	stack_print(pilea);
-	printf("test1\n");
-
-	//pilea = rotate(pilea);
-	
-	//pilea = reverse_rotate(pilea);
-	//pilea = test_previous_fct(pilea);
-	//pilea = swap(pilea);
-	pilea = push(&pilea, pileb);
-	stack_print(pilea);
-	printf("testa\n");
-	stack_print(pileb);
-	printf("testb\n");
-
-
-
 	
 	return (0);
 }

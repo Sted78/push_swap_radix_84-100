@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:32:22 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 10:08:43 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 18:18:00 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,6 @@ void	stack_print(t_stack *stack)
 	}
 	printf("\n");
 }
-
-int	stack_is_sorted(t_stack *stack)
-{
-	
-	while (stack)
-	{
-		if (stack->next && stack->next->val < stack->val)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-
-}
-
  
 t_stack	*create_stack_a(int ac, char **av, int startindex)
 {

@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 12:43:41 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 20:38:17 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,19 @@ t_stack		*push(t_stack **dest, t_stack *src);
 void		pa(t_stack **pilea, t_stack **pileb);
 void		pb(t_stack **pilea, t_stack **pileb);
 
+//sort pile
+int	stack_is_sorted(t_stack *stack);
+int		stack_min(t_stack *pile);
+int		stack_max(t_stack *pile);
+void	sort_piles(t_stack **pileA, t_stack **pileB);
+int		min_index(t_stack *pile);
+void	sort_big_pile(t_stack **pileA, t_stack **pileB);
+//algo 2 3 4 5 
+void	sort_2(t_stack *pile);
+void	sort_3(t_stack *pileA);
+void	sort_4(t_stack *pileA, t_stack *pileB);
+void	sort_5(t_stack *pileA, t_stack *pileB);
+
 //enchained
 //1
 t_stack	*stack_new(int val);
@@ -71,7 +84,6 @@ void	stack_add_back(t_stack **stack, t_stack *new);
 //2
 t_stack	*create_stack_a(int ac, char **av, int startindex);
 void	stack_print(t_stack *stack);//////sup//////
-int	stack_is_sorted(t_stack *stack);
 t_stack	*stack_elem_previous(t_stack *pile, t_stack *elem);
 
 

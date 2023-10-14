@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:00:13 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 12:36:58 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 19:37:19 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,6 @@ void	pb(t_stack **pilea, t_stack **pileb)
 	*pilea = push(pileb, *pilea);
 	write(1, "pb\n", 3);
 }
+//pa, pb = push a, b
+//take the first element at the top of b and put it at the top of a.
+//Do nothing if b is empty.

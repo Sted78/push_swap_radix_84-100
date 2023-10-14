@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:35:13 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 12:35:34 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/14 19:33:38 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,5 @@ void	ss(t_stack **pilea, t_stack **pileb)
 	*pileb = swap(*pileb);
 	write(1, "ss\n", 3);
 }
+//sa, sb, ss = swap a, b, both
+//swap the first 2 elements at the top of the stack

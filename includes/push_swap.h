@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/14 20:38:17 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack
 {
 	int	val;
+	int	index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -65,14 +66,14 @@ void		pb(t_stack **pilea, t_stack **pileb);
 int	stack_is_sorted(t_stack *stack);
 int		stack_min(t_stack *pile);
 int		stack_max(t_stack *pile);
-void	sort_piles(t_stack **pileA, t_stack **pileB);
+//void	sort_piles(t_stack **pilea, t_stack **pileb);
 int		min_index(t_stack *pile);
-void	sort_big_pile(t_stack **pileA, t_stack **pileB);
+void	sort_big_pile(t_stack **pilea, t_stack **pileb);
 //algo 2 3 4 5 
 void	sort_2(t_stack *pile);
-void	sort_3(t_stack *pileA);
-void	sort_4(t_stack *pileA, t_stack *pileB);
-void	sort_5(t_stack *pileA, t_stack *pileB);
+void	sort_3(t_stack *pilea);
+void	sort_4(t_stack *pilea, t_stack *pileb);
+void	sort_5(t_stack *pilea, t_stack *pileb);
 
 //enchained
 //1

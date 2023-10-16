@@ -6,30 +6,11 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:02:52 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/09 14:23:52 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:54:06 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-/*
-
-clear 
-
-./push_swap "1 2 3 "
-./push_swap "1 2 3"
-./push_swap 1 2 3			
-./push_swap ""
-./push_swap "1 ff"
-./push_swap 1 ff
-./push_swap "-8 12 -15"
-./push_swap -8 12 -15
-
-valgrind ./push_swap "1 5 3 "
-valgrind ./push_swap "1 5 3"
-valgrind ./push_swap ""
-valgrind ./push_swap "1 ff"
-*/
-
 
 int	no_double(int ac, char **av, int startindex)
 {

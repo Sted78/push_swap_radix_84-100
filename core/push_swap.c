@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/14 19:39:29 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int ac, char **av)
 	if (!no_error_in_args(new_ac, new_av, startindex))
 	{
 		printf("EXIT_FAILURE\n");
+		//free
 		return (EXIT_FAILURE);
 	}
 	pilea = create_stack_a(new_ac, new_av, startindex);

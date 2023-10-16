@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:01:49 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/14 20:40:07 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,91 +19,91 @@ void	sort_2(t_stack *pile)
 	swap(pile);
 }
 
-void	sort_3(t_stack *pileA)
+void	sort_3(t_stack *pilea)
 {
 	//123
-	if (stack_is_sorted(pileA))
+	if (stack_is_sorted(pilea))
 		return ;
 	//132
-	if (pileA->val < pileA->next->val
-			&& pileA->next->val > pileA->next->next->val)
+	if (pilea->val < pilea->next->val
+			&& pilea->next->val > pilea->next->next->val)
 	{
-		sa(&pileA);
-		ra(&pileA);		
+		sa(&pilea);
+		ra(&pilea);		
 	}
 	//213
-	else if (pileA->val > pileA->next->val
-			&& pileA->next->val < pileA->next->next->val)
+	else if (pilea->val > pilea->next->val
+			&& pilea->next->val < pilea->next->next->val)
 	{
-		sa(&pileA);
+		sa(&pilea);
 	}
 	//231
-	else if (pileA->val < pileA->next->val
-			&& pileA->next->val < pileA->next->next->val)
+	else if (pilea->val < pilea->next->val
+			&& pilea->next->val < pilea->next->next->val)
 	{
-		rra(&pileA);
+		rra(&pilea);
 	}
 	//312
-	else if(pileA->val  > pileA->next->val
-			&& pileA->next->val < pileA->next->next->val)
+	else if(pilea->val  > pilea->next->val
+			&& pilea->next->val < pilea->next->next->val)
 	{
-		ra(&pileA);
+		ra(&pilea);
 	}
 	//321
-	else if (pileA->val > pileA->next->val
-			&& pileA->next->val > pileA->next->next->val)
+	else if (pilea->val > pilea->next->val
+			&& pilea->next->val > pilea->next->next->val)
 	{
-		sa(&pileA);
-		rra(&pileA);
+		sa(&pilea);
+		rra(&pilea);
 	}
 }
 
-void	sort_4(t_stack *pileA, t_stack *pileB)
+void	sort_4(t_stack *pilea, t_stack *pileb)
 {
 	int		i;
 	
-	if (stack_is_sorted(pileA))
+	if (stack_is_sorted(pilea))
 		return ;
 	
-	i = min_index(pileA);	
+	i = min_index(pilea);	
 	if (i == 1)
-		ra(&pileA);
+		ra(&pilea);
 	else if (i == 2)
 	{
-		rra(&pileA);
-		rra(&pileA);		
+		rra(&pilea);
+		rra(&pilea);		
 	}
 	else if (i == 3)
-		rra(&pileA);
-	pb(&pileA, &pileB);
-	sort_3(pileA);
-	pa(&pileA, &pileB);
+		rra(&pilea);
+	pb(&pilea, &pileb);
+	sort_3(pilea);
+	pa(&pilea, &pileb);
 }
 
-void	sort_5(t_stack *pileA, t_stack *pileB)
+void	sort_5(t_stack *pilea, t_stack *pileb)
 {
 	int		i;
 
-	if (stack_is_sorted(pileA))
+	if (stack_is_sorted(pilea))
 		return ;
-	i = min_index(pileA);
+	i = min_index(pilea);
 	if (i == 1)
-		sa(&pileA);
+		sa(&pilea);
 	else if (i == 2)
 	{
-		ra(&pileA);
-		ra(&pileA);
+		ra(&pilea);
+		ra(&pilea);
 	}
 	else if (i == 3)
 	{
-		rra(&pileA);
-		rra(&pileA);
+		rra(&pilea);
+		rra(&pilea);
 	}
 	else if (i == 4)
-		rra(&pileA);
-	pb(&pileA, &pileB);		
-	sort_4(pileA, pileB);
-	pa(&pileA, &pileB);
+		rra(&pilea);
+	pb(&pilea, &pileb);		
+	sort_4(pilea, pileb);
+	pa(&pilea, &pileb);
 }
 
 

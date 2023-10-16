@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:50:39 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 16:52:49 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:52:18 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,29 +43,45 @@ int		min_index(t_stack *pile)
 	return (min);
 }
 
-void	radix(t_stack **pilea, t_stack **pileb)
+/*int	nbr_of_digits_in_biggest_nbr(t_stack *pile)
 {
-	t_stack	*head_a;
+	int		nbr_of_digits;
+	int		biggest_nbr;
+
+	biggest_nbr = stack_max(pile);
+	nbr_of_digits = 0;
+	while (biggest_nbr)
+	{
+		biggest_nbr = biggest_nbr / 10;
+		nbr_of_digits++;
+	}
+	return (nbr_of_digits);
+}
+
+void	radix_sort(t_stack **pilea, t_stack **pileb)
+{
 	int		i;
 	int		j;
-	int		size;
+	int		nbr;
+	int		nbr_of_digits;
 
 	i = 0;
-	size = stack_size(*pilea);
-	while (!stack_is_sorted(*pilea))
+	nbr_of_digits = nbr_of_digits_in_biggest_nbr(*pilea);
+	while (i < nbr_of_digits)
 	{
 		j = 0;
-		while (j < size)
+		while (j < stack_size(*pilea))
 		{
-			head_a = *pilea;
-			if (head_a->index & (1 << i))
+			nbr = (*pilea)->val;
+			if ((nbr >> i) & 1)
 				ra(pilea);
 			else
 				pb(pilea, pileb);
+			j++;
 		}
-		
-	while (stack_size(*pileb) != 0)
-		pa(pilea, pileb);
-	i++;
+		while (*pileb)
+			pa(pilea, pileb);
+		i++;
 	}
-}	
+}*/
+

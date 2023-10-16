@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:39:11 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:48:42 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void		pb(t_stack **pilea, t_stack **pileb);
 int	stack_is_sorted(t_stack *stack);
 int		stack_min(t_stack *pile);
 int		stack_max(t_stack *pile);
+void	sort_piles(t_stack **pilea, t_stack **pileb);
 //void	sort_piles(t_stack **pilea, t_stack **pileb);
 int		min_index(t_stack *pile);
 void	sort_big_pile(t_stack **pilea, t_stack **pileb);
@@ -74,6 +75,12 @@ void	sort_2(t_stack *pile);
 void	sort_3(t_stack *pilea);
 void	sort_4(t_stack *pilea, t_stack *pileb);
 void	sort_5(t_stack *pilea, t_stack *pileb);
+//big_pile
+void	set_index_in_pile(t_stack **pile);
+int		min_index(t_stack *pile);
+int		nbr_of_digits_in_biggest_nbr(t_stack *pile);
+void	radix_sort(t_stack **pilea, t_stack **pileb);
+
 
 //enchained
 //1

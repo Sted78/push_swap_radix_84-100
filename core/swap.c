@@ -6,13 +6,13 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:35:13 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:38:37 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack *	swap(t_stack *pile)
+t_stack *swap(t_stack *pile)
 {
 	t_stack	*first;
 	t_stack	*second;

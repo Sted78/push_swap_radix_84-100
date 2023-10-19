@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:01:33 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 17:47:41 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:38:34 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	stack_is_sorted(t_stack *stack)
 		stack = stack->next;
 	}
 	return (1);
-
 }
 
 int	stack_min(t_stack *pile)
@@ -65,10 +64,10 @@ void	sort_piles(t_stack **pilea, t_stack **pileb)
 	else if (stack_size(*pilea) == 5)
 		sort_5(*pilea, *pileb);
 	else
-		radix_sort(pilea, pileb);
+		radix_sort(*pilea, *pileb);
 }
 
-/*int	min_index(t_stack *pile)
+int	min_index(t_stack *pile)
 {
 	int		min;
 	int		i;
@@ -83,9 +82,4 @@ void	sort_piles(t_stack **pilea, t_stack **pileb)
 		i++;
 	}
 	return (i);
-}*/
-
-
-
-
-
+}

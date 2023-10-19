@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:40:46 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/19 21:54:14 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,24 @@ int	main(int ac, char **av)
 	}
 	else
 		startindex = 1;
-	ft_print_strs(new_av);
 	if (!no_error_in_args(new_ac, new_av, startindex))
 	{
 		printf("EXIT_FAILURE\n");
-		//free
+		//free(new_av);
 		return (EXIT_FAILURE);
 	}
 	pilea = create_stack_a(new_ac, new_av, startindex);
+	//stack_print(pilea);
+	set_index_pile(pilea);
+	//index_print(pilea);
+	set_binary_index(pilea);
+	//binary_print(pilea);
+
 	sort_piles(&pilea, &pileb);
+	//printf("test_after_set\n");
+	//index_print(pilea);
+	//stack_print(pilea);
+	
 	
 	
 	return (0);

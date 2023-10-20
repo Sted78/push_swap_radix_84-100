@@ -29,7 +29,7 @@ typedef struct s_stack
 //check args
 int		no_error_in_args(int ac, char **av, int startindex);
 int		nbr_only(int ac, char **av, int startindex);
-int		not_too_big(int ac, char **av, int startindex);
+int	tous_les_strs_entrent_dans_int(int ac, char **av, int startindex);
 //int		not_sorted(int ac, char **av);
 int		no_double(int ac, char **av, int startindex);
 
@@ -65,20 +65,20 @@ void		pa(t_stack **pilea, t_stack **pileb);
 void		pb(t_stack **pilea, t_stack **pileb);
 
 //sort pile
-int	stack_is_sorted(t_stack *stack);
+int	stack_is_sorted(t_stack **stack);
 int		stack_min(t_stack *pile);
 int		stack_max(t_stack *pile);
 void	sort_piles(t_stack **pilea, t_stack **pileb);
-int		min_index(t_stack *pile);
+int		min_index(t_stack **pile);
 	
 //algo 2 3 4 5
-void	sort_2(t_stack *pilea);
-void	sort_3(t_stack *pilea);
-void	sort_4(t_stack *pilea, t_stack *pileb);
-void	sort_5(t_stack *pilea, t_stack *pileb);
+void	sort_2(t_stack **pilea);
+void	sort_3(t_stack **pilea);
+void	sort_4(t_stack **pilea, t_stack **pileb);
+void	sort_5(t_stack **pilea, t_stack **pileb);
 //double mouv
-void	sa_rra(t_stack *pilea);
-void	ra_sa(t_stack *pilea);
+void	sa_rra(t_stack **pilea);
+void	ra_sa(t_stack **pilea);
 
 // noob
 void	set_index_pile(t_stack *pile);

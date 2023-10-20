@@ -6,34 +6,34 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:35:13 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/11 14:10:54 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:51:49 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_tab_strs_size(char **str)
+int	ft_tab_strs_size(char **strs)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (strs[i])
 		i++;
 	return (i);
 }
 
-void	ft_print_strs(char **str)
+void	ft_print_strs(char **strs)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (str[i])
+	while (strs[i])
 	{
 		j = 0;
-		while (str[i][j])
+		while (strs[i][j])
 		{
-			write (1, &str[i][j], 1);
+			write (1, &strs[i][j], 1);
 
 			j++;
 		}
@@ -43,15 +43,15 @@ void	ft_print_strs(char **str)
 	write (1, "\n", 1);
 }
 
-void	ft_free_tab_strs(char **str)
+void	ft_free_tab_strs(char **strs)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (strs[i])
 	{
-		free(str[i]);
+		free(strs[i]);
 		i++;
 	}
-	free(str);
+	free(strs);
 }

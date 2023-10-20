@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:02:52 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 11:54:06 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:39:41 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,24 @@ int	str_entre_dans_un_int(char *str)
 	long long int	num = ft_atoll(str);
 	if (num < INT_MIN || num > INT_MAX)
 	{
-		ft_putstr("DEBUG : Error : max_int or min_int\n");
+		ft_putstr("DEBUG : Error : str_entre_PAS dans_un_int: ");
+		ft_putstr(str);
+		ft_putstr("\n");
 		return (0);
 	}
 	return (1);	
 }
 
-int	not_too_big(int ac, char **av, int startindex)
+int	tous_les_strs_entrent_dans_int(int ac, char **av, int startindex)
 {
 	int	i;
 	
 	i = startindex;
 	while (i < ac)
 	{
-		str_entre_dans_un_int(av[i]);
+		//SI (av[i]) ne rentrre pas dans ub)
+		if (!str_entre_dans_un_int(av[i]))
+			return (0);
 		i++;
 	}
 	return (1);
@@ -93,9 +97,9 @@ int	no_error_in_args(int ac, char **av, int startindex)
 		printf("DEBUG - nbr_only\n");
 		return (0);
 	}	
-	else if (not_too_big(ac, av, startindex) == 0)
+	else if (tous_les_strs_entrent_dans_int(ac, av, startindex) == 0)
 	{
-		printf("DEBUG - not_too_big\n");
+		printf("DEBUG - tous_les_strs_NE entrent PAS _dans_int\n");
 		return (0);
 	}	
 	else if (no_double(ac, av, startindex) == 0)

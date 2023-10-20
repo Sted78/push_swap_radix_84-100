@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 10:19:33 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/19 20:27:56 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:51:23 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,27 @@ t_stack		*smallest_undefined_index(t_stack *pile)
 	return (min);
 }
 
+
+void	set_all_index_to_zero(t_stack *pile)
+{
+	t_stack	*tmp;
+	
+	tmp = pile;
+	while (tmp)
+	{
+		tmp->index = 0;
+		tmp = tmp->next;
+	}
+}
+
 void	set_index_pile(t_stack *pile)
 {
 	int	i;
 	t_stack	*min;
+	
 		
 	i = 1;
+	set_all_index_to_zero(pile);
 	while (find_undefined_index(pile) == 1)
 	{
 		min = smallest_undefined_index(pile);

@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:38:33 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/09 16:45:33 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:12:11 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ t_stack	*stack_new(int val)
 	if (!stack)
 		return (NULL);
 	stack->val = val;
+	stack->index = 0;
+	stack->binary = 0;
 	stack->next = NULL;
 	return (stack);
 }

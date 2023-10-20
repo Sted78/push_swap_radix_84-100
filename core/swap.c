@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:35:13 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/17 20:38:37 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:03:27 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,13 @@ t_stack *swap(t_stack *pile)
 
 void	sa(t_stack **pilea)
 {
+	
+	//printf(" 👺  SA1   \n");
 	*pilea = swap(*pilea);
+	//printf(" 👺  SA2  \n");
+	stack_print(*pilea);
 	write(1, "sa\n", 3);
+	//printf(" 👺  SA3   \n");
 }
 
 void	sb(t_stack **pileb)

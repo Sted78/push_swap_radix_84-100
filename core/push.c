@@ -6,17 +6,17 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:00:13 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:53:06 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*	push(t_stack **dest, t_stack *src)
+t_stack	*push(t_stack **dest, t_stack *src)
 {
 	t_stack	*first_src;
 	t_stack	**new_dest;
-	
+
 	if (!src)
 		return (NULL);
 	if (!dest)

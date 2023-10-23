@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:01:33 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/20 14:12:08 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/21 14:10:10 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	stack_is_sorted(t_stack **stack)
 {
 	t_stack	*tmp;
-	
+
 	tmp = *stack;
 	while ((tmp))
 	{
@@ -29,7 +29,7 @@ int	stack_is_sorted(t_stack **stack)
 int	stack_min(t_stack *pile)
 {
 	int	min;
-		
+
 	min = pile->val;
 	while (pile)
 	{
@@ -39,6 +39,7 @@ int	stack_min(t_stack *pile)
 	}
 	return (min);
 }
+
 int	stack_max(t_stack *pile)
 {
 	int	max;
@@ -57,7 +58,6 @@ void	sort_piles(t_stack **pilea, t_stack **pileb)
 {
 	if (stack_is_sorted(pilea))
 		return ;
-	stack_print(*pilea);
 	if (stack_size(*pilea) == 2)
 		sort_2(pilea);
 	else if (stack_size(*pilea) == 3)
@@ -67,8 +67,7 @@ void	sort_piles(t_stack **pilea, t_stack **pileb)
 	else if (stack_size(*pilea) == 5)
 		sort_5(pilea, pileb);
 	else
-		radix_sort(*pilea, *pileb);
-	stack_print(*pilea);
+		radix_sort(pilea, pileb);
 }
 
 int	min_index(t_stack **pile)

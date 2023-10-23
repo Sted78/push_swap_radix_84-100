@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:38:33 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/20 12:12:11 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:59:35 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	stack_add_front(t_stack **stack, t_stack *new)
 {
-	if(stack && new)
+	if (stack && new)
 	{
 		new->next = *stack;
-		*stack = new;		
+		*stack = new;
 	}
 }
 
@@ -36,10 +36,11 @@ void	stack_add_back(t_stack **stack, t_stack *new)
 			*stack = new;
 	}
 }
+
 int	stack_size(t_stack *stack)
 {
-	int	size;
-	
+	int		size;
+
 	size = 0;
 	while (stack)
 	{
@@ -51,7 +52,7 @@ int	stack_size(t_stack *stack)
 
 t_stack	*stack_last(t_stack *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	while (stack->next)
 		stack = stack->next;
@@ -61,7 +62,7 @@ t_stack	*stack_last(t_stack *stack)
 t_stack	*stack_new(int val)
 {
 	t_stack	*stack;
-	
+
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);

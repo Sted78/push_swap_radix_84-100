@@ -6,18 +6,18 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:39:38 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/16 11:52:53 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/21 14:03:40 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*	reverse_rotate(t_stack *pile)
+t_stack	*reverse_rotate(t_stack *pile)
 {
 	t_stack	*last;
 	t_stack	*new_last;
 	t_stack	*before_last;
-	
+
 	if (!pile || !pile->next)
 		return (NULL);
 	last = stack_last(pile);
@@ -27,7 +27,7 @@ t_stack	*	reverse_rotate(t_stack *pile)
 	pile = last;
 	new_last = stack_last(pile);
 	new_last->next = NULL;
-	return (pile);	
+	return (pile);
 }
 
 void	rra(t_stack **pilea)

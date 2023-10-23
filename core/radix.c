@@ -6,20 +6,32 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:01:33 by svanmarc          #+#    #+#             */
-/*   Updated: 2023/10/19 22:02:27 by svanmarc         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:38:00 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+void	set_binary_index(t_stack *pile)
+{
+	t_stack	*tmp;
+
+	tmp = pile;
+	while (tmp)
+	{
+		tmp->binary = convert_int_in_binary(tmp->index);
+		tmp = tmp->next;
+	}
+}
+
 int	binary_max_digits(t_stack *pilea)
 {
- 	int	max;
-	int	nbr;
-	int	nbr_digits;
+	int		max;
+	int		nbr;
+	int		nbr_digits;
 	t_stack	*tmp;
-	
-	max = stack_max(pilea);
+
+	max = stack_min(pilea);
 	tmp = pilea;
 	while (tmp)
 	{
@@ -37,19 +49,11 @@ int	binary_max_digits(t_stack *pilea)
 	return (nbr_digits);
 }
 
-int	ieme_bis(int nbr, int i)
-{
-	int	shifted;
-
-	shifted = nbr >> (i - 1);
-	return (shifted & 1);
-}
-
 int	ieme_digit_of_an_int(int nbr, int i, int max)
 {
 	int	nbr_digits;
 	int	digit;
-	
+
 	nbr_digits = max - i + 1;
 	while (nbr_digits > 0)
 	{
@@ -57,51 +61,44 @@ int	ieme_digit_of_an_int(int nbr, int i, int max)
 		nbr = nbr / 10;
 		nbr_digits--;
 	}
-//	printf("digit = %i\n", digit);
 	return (digit);
 }
 
-void	radix_sort(t_stack *pilea, t_stack *pileb)
+void	sort_the_diggit(t_stack **pilea, t_stack **pileb, int curseur, int max)
 {
-//	printf("radix_sort\n");
-	int	curseur;
 	t_stack	*tmp;
-	int	turns;
-	int	max;
-	int	size;
-	
-	//stack_print(pilea);
-	size = stack_size(pilea);
-//	printf("size = %i\n", size);
-	curseur = binary_max_digits(pilea);
+
+	tmp = *pilea;
+	if (ieme_digit_of_an_int(tmp->binary, curseur, max) == 1)
+		pb(pilea, pileb);
+	else
+		ra(pilea);
+}
+
+void	radix_sort(t_stack **pilea, t_stack **pileb)
+{
+	int		curseur;
+	t_stack	*tmp;
+	int		turns;
+	int		max;
+	int		size;
+
+	size = stack_size(*pilea);
+	curseur = binary_max_digits(*pilea);
 	max = curseur;
-//	printf("curseur = %i\n", curseur);
-	while (pilea)
-		pb(&pilea, &pileb);
 	while (curseur > 0)
 	{
 		turns = size;
 		while (turns > 0)
 		{
-			tmp = pileb;
+			tmp = *pilea;
 			if (tmp == NULL)
 				break ;
-		//	printf("turns = %i\n", turns);
-		//	printf("tmp->binary = %i\n", tmp->binary);
-			if (ieme_digit_of_an_int(tmp->binary, curseur, max) == 1)
-				pa(&pilea, &pileb);
-			else
-				rb(&pileb);
-			
+			sort_the_diggit(pilea, pileb, curseur, max);
 			turns--;
-		//	printf("turnsB = %i\n", turns);
 		}
-		while (pilea)
-			pb(&pilea, &pileb);
+		while (*pileb)
+			pa(pilea, pileb);
 		curseur--;
 	}
-	while (pileb)
-		pa(&pilea, &pileb);
-	//printf("\n\n");
-	//stack_print(pilea);
-}	
+}
